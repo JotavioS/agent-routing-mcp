@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import urllib.request
+from typing import Any
 
 from agent_routing_mcp.types import Decision, Route
 
@@ -13,22 +14,15 @@ class SystemOneHTTPProvider:
         self.url = url
         self.timeout_seconds = timeout_seconds
 
-    def choose(
+    def system_one(
         self,
         *,
-        state: str,
-        question: str,
-        choices: dict[str, str],
-    ) -> Decision:
+        state: Any,
+        questions: dict[str, Any],
+    ) -> dict[str, Any]:
         payload = {
             "state": state,
-            "questions": {
-                "route": {
-                    "type": "choice",
-                    "instructions": question,
-                    "criteria": choices,
-                }
-            },
+            "questions": questions,
         }
 
         request = urllib.request.Request(
@@ -38,7 +32,25 @@ class SystemOneHTTPProvider:
         )
 
         with urllib.request.urlopen(request, timeout=self.timeout_seconds) as response:
-            body = json.load(response)
+            return json.load(response)
+
+    def choose(
+        self,
+        *,
+        state: str,
+        question: str,
+        choices: dict[str, str],
+    ) -> Decision:
+        body = self.system_one(
+            state=state,
+            questions={
+                "route": {
+                    "type": "choice",
+                    "instructions": question,
+                    "criteria": choices,
+                }
+            },
+        )
 
         answer = body["answers"]["route"]
         probabilities = {
@@ -46,8 +58,9 @@ class SystemOneHTTPProvider:
             for key, value in answer["probabilities"].items()
         }
 
+        choice = Route(answer["choice"])
         return Decision(
-            choice=Route(answer["choice"]),
-            confidence=float(answer.get("confidence", probabilities[Route(answer["choice"])])),
+            choice=choice,
+            confidence=float(answer.get("answer_confidence", probabilities[choice])),
             probabilities=probabilities,
         )
