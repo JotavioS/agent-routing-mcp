@@ -1,0 +1,26 @@
+{
+  "decision_provider": {
+    "type": "systemone_http",
+    "url": "http://127.0.0.1:8799/v1/systemone",
+    "timeout_seconds": 5
+  },
+  "ambiguity_margin": 0.10,
+  "routes": {
+    "LOW": {
+      "model": "gpt-6-luna",
+      "reasoning_effort": "low"
+    },
+    "MEDIUM": {
+      "model": "gpt-6-luna",
+      "reasoning_effort": "medium"
+    },
+    "HIGH": {
+      "model": "gpt-6-luna",
+      "reasoning_effort": "high"
+    },
+    "ESCALATE": {
+      "model": "gpt-6-sol",
+      "reasoning_effort": "high"
+    }
+  }
+}
