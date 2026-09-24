@@ -1,0 +1,273 @@
+{
+  "model": "convaiinnovations/laya-multilingual",
+  "benchmark": "routing-language-benchmark-v1",
+  "modes": {
+    "en": {
+      "mode": "en",
+      "cases": 40,
+      "permutations_per_case": 5,
+      "accuracy": 0.45,
+      "under_routing_rate": 0.525,
+      "over_routing_rate": 0.025,
+      "option_order_flip_rate": 0.5,
+      "mean_inference_ms": 168.848,
+      "per_class": {
+        "LOW": {
+          "n": 10,
+          "accuracy": 1.0,
+          "predictions": {
+            "LOW": 10
+          }
+        },
+        "MEDIUM": {
+          "n": 10,
+          "accuracy": 0.0,
+          "predictions": {
+            "LOW": 10
+          }
+        },
+        "HIGH": {
+          "n": 10,
+          "accuracy": 0.3,
+          "predictions": {
+            "HIGH": 3,
+            "LOW": 4,
+            "ESCALATE": 1,
+            "MEDIUM": 2
+          }
+        },
+        "ESCALATE": {
+          "n": 10,
+          "accuracy": 0.5,
+          "predictions": {
+            "ESCALATE": 5,
+            "HIGH": 1,
+            "LOW": 4
+          }
+        }
+      },
+      "language_counts": {
+        "en": 40
+      }
+    },
+    "pt-BR": {
+      "mode": "pt-BR",
+      "cases": 40,
+      "permutations_per_case": 5,
+      "accuracy": 0.35,
+      "under_routing_rate": 0.525,
+      "over_routing_rate": 0.125,
+      "option_order_flip_rate": 0.6,
+      "mean_inference_ms": 74.33,
+      "per_class": {
+        "LOW": {
+          "n": 10,
+          "accuracy": 0.9,
+          "predictions": {
+            "LOW": 9,
+            "ESCALATE": 1
+          }
+        },
+        "MEDIUM": {
+          "n": 10,
+          "accuracy": 0.1,
+          "predictions": {
+            "LOW": 8,
+            "HIGH": 1,
+            "MEDIUM": 1
+          }
+        },
+        "HIGH": {
+          "n": 10,
+          "accuracy": 0.0,
+          "predictions": {
+            "LOW": 6,
+            "ESCALATE": 3,
+            "MEDIUM": 1
+          }
+        },
+        "ESCALATE": {
+          "n": 10,
+          "accuracy": 0.4,
+          "predictions": {
+            "ESCALATE": 4,
+            "MEDIUM": 1,
+            "LOW": 5
+          }
+        }
+      },
+      "language_counts": {
+        "pt-BR": 40
+      }
+    },
+    "mixed": {
+      "mode": "mixed",
+      "cases": 40,
+      "permutations_per_case": 5,
+      "accuracy": 0.35,
+      "under_routing_rate": 0.575,
+      "over_routing_rate": 0.075,
+      "option_order_flip_rate": 0.575,
+      "mean_inference_ms": 74.978,
+      "per_class": {
+        "LOW": {
+          "n": 10,
+          "accuracy": 1.0,
+          "predictions": {
+            "LOW": 10
+          }
+        },
+        "MEDIUM": {
+          "n": 10,
+          "accuracy": 0.0,
+          "predictions": {
+            "HIGH": 1,
+            "LOW": 9
+          }
+        },
+        "HIGH": {
+          "n": 10,
+          "accuracy": 0.1,
+          "predictions": {
+            "MEDIUM": 2,
+            "LOW": 5,
+            "HIGH": 1,
+            "ESCALATE": 2
+          }
+        },
+        "ESCALATE": {
+          "n": 10,
+          "accuracy": 0.3,
+          "predictions": {
+            "LOW": 6,
+            "ESCALATE": 3,
+            "HIGH": 1
+          }
+        }
+      },
+      "language_counts": {
+        "en": 20,
+        "pt-BR": 20
+      }
+    }
+  },
+  "paired_language_analysis": {
+    "paired_cases": 40,
+    "same_prediction_rate": 0.55,
+    "different_prediction_rate": 0.44999999999999996,
+    "both_correct": 10,
+    "en_correct_pt_wrong": 8,
+    "pt_correct_en_wrong": 4,
+    "both_wrong": 18,
+    "changed_cases": [
+      {
+        "id": "esc-02",
+        "expected": "ESCALATE",
+        "en": "ESCALATE",
+        "pt-BR": "MEDIUM"
+      },
+      {
+        "id": "esc-03",
+        "expected": "ESCALATE",
+        "en": "ESCALATE",
+        "pt-BR": "LOW"
+      },
+      {
+        "id": "esc-04",
+        "expected": "ESCALATE",
+        "en": "HIGH",
+        "pt-BR": "ESCALATE"
+      },
+      {
+        "id": "esc-05",
+        "expected": "ESCALATE",
+        "en": "LOW",
+        "pt-BR": "ESCALATE"
+      },
+      {
+        "id": "esc-06",
+        "expected": "ESCALATE",
+        "en": "LOW",
+        "pt-BR": "ESCALATE"
+      },
+      {
+        "id": "esc-07",
+        "expected": "ESCALATE",
+        "en": "ESCALATE",
+        "pt-BR": "LOW"
+      },
+      {
+        "id": "esc-08",
+        "expected": "ESCALATE",
+        "en": "ESCALATE",
+        "pt-BR": "LOW"
+      },
+      {
+        "id": "high-01",
+        "expected": "HIGH",
+        "en": "HIGH",
+        "pt-BR": "LOW"
+      },
+      {
+        "id": "high-02",
+        "expected": "HIGH",
+        "en": "LOW",
+        "pt-BR": "ESCALATE"
+      },
+      {
+        "id": "high-03",
+        "expected": "HIGH",
+        "en": "HIGH",
+        "pt-BR": "MEDIUM"
+      },
+      {
+        "id": "high-04",
+        "expected": "HIGH",
+        "en": "ESCALATE",
+        "pt-BR": "LOW"
+      },
+      {
+        "id": "high-05",
+        "expected": "HIGH",
+        "en": "MEDIUM",
+        "pt-BR": "ESCALATE"
+      },
+      {
+        "id": "high-07",
+        "expected": "HIGH",
+        "en": "MEDIUM",
+        "pt-BR": "LOW"
+      },
+      {
+        "id": "high-08",
+        "expected": "HIGH",
+        "en": "LOW",
+        "pt-BR": "ESCALATE"
+      },
+      {
+        "id": "high-10",
+        "expected": "HIGH",
+        "en": "HIGH",
+        "pt-BR": "LOW"
+      },
+      {
+        "id": "low-05",
+        "expected": "LOW",
+        "en": "LOW",
+        "pt-BR": "ESCALATE"
+      },
+      {
+        "id": "med-06",
+        "expected": "MEDIUM",
+        "en": "LOW",
+        "pt-BR": "HIGH"
+      },
+      {
+        "id": "med-07",
+        "expected": "MEDIUM",
+        "en": "LOW",
+        "pt-BR": "MEDIUM"
+      }
+    ]
+  }
+}
