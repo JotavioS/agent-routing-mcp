@@ -1,1 +1,1 @@
-"""Training-data generators for routing models."""\n
+"""Training-data generators for routing models."""
