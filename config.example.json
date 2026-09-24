@@ -4,6 +4,11 @@
     "url": "http://127.0.0.1:8799/v1/systemone",
     "timeout_seconds": 5
   },
+  "routing_strategy": {
+    "type": "choice",
+    "low_score_max": 1.45,
+    "medium_score_max": 2.10
+  },
   "ambiguity_margin": 0.10,
   "routes": {
     "LOW": {
