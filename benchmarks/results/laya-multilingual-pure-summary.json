@@ -1,0 +1,65 @@
+﻿{
+    "model":  "convaiinnovations/laya-multilingual",
+    "benchmark":  "routing-benchmark-v1",
+    "device":  "cuda",
+    "cases":  60,
+    "permutations_per_case":  5,
+    "load_seconds":  16.679,
+    "mean_inference_ms":  138.537,
+    "accuracy":  0.3333333333333333,
+    "under_routing_rate":  0.6166666666666667,
+    "over_routing_rate":  0.05,
+    "option_order_flip_rate":  0.5333333333333333,
+    "per_class":  {
+                      "LOW":  {
+                                  "n":  15,
+                                  "accuracy":  1.0,
+                                  "predictions":  {
+                                                      "LOW":  15
+                                                  }
+                              },
+                      "MEDIUM":  {
+                                     "n":  15,
+                                     "accuracy":  0.0,
+                                     "predictions":  {
+                                                         "LOW":  13,
+                                                         "HIGH":  2
+                                                     }
+                                 },
+                      "HIGH":  {
+                                   "n":  15,
+                                   "accuracy":  0.06666666666666667,
+                                   "predictions":  {
+                                                       "MEDIUM":  3,
+                                                       "LOW":  10,
+                                                       "HIGH":  1,
+                                                       "ESCALATE":  1
+                                                   }
+                               },
+                      "ESCALATE":  {
+                                       "n":  15,
+                                       "accuracy":  0.26666666666666666,
+                                       "predictions":  {
+                                                           "ESCALATE":  4,
+                                                           "HIGH":  2,
+                                                           "LOW":  9
+                                                       }
+                                   }
+                  },
+    "per_language":  {
+                         "en":  {
+                                    "n":  40,
+                                    "accuracy":  0.375,
+                                    "under_routing_rate":  0.575,
+                                    "over_routing_rate":  0.05,
+                                    "option_order_flip_rate":  0.6
+                                },
+                         "pt-BR":  {
+                                       "n":  20,
+                                       "accuracy":  0.25,
+                                       "under_routing_rate":  0.7,
+                                       "over_routing_rate":  0.05,
+                                       "option_order_flip_rate":  0.4
+                                   }
+                     }
+}
