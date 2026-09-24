@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agent-routing-mcp"
+version = "0.1.0"
+description = "MCP server for adaptive agent model routing through pluggable typed-decision providers."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "mcp>=2.0.0",
+  "pydantic>=2.7.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "pytest-asyncio>=0.23"
+]
+
+[project.scripts]
+agent-routing-mcp = "agent_routing_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/agent_routing_mcp"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
