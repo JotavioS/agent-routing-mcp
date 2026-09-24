@@ -1,0 +1,153 @@
+﻿{
+    "model":  "convaiinnovations/laya",
+    "benchmark":  "routing-language-benchmark-v1",
+    "load_seconds":  44.778,
+    "modes":  {
+                  "en":  {
+                             "mode":  "en",
+                             "cases":  40,
+                             "permutations_per_case":  5,
+                             "accuracy":  0.625,
+                             "under_routing_rate":  0.375,
+                             "over_routing_rate":  0.0,
+                             "option_order_flip_rate":  0.55,
+                             "mean_inference_ms":  113.02,
+                             "per_class":  {
+                                               "LOW":  {
+                                                           "n":  10,
+                                                           "accuracy":  1.0,
+                                                           "predictions":  {
+                                                                               "LOW":  10
+                                                                           }
+                                                       },
+                                               "MEDIUM":  {
+                                                              "n":  10,
+                                                              "accuracy":  0.5,
+                                                              "predictions":  {
+                                                                                  "MEDIUM":  5,
+                                                                                  "LOW":  5
+                                                                              }
+                                                          },
+                                               "HIGH":  {
+                                                            "n":  10,
+                                                            "accuracy":  0.1,
+                                                            "predictions":  {
+                                                                                "MEDIUM":  8,
+                                                                                "LOW":  1,
+                                                                                "HIGH":  1
+                                                                            }
+                                                        },
+                                               "ESCALATE":  {
+                                                                "n":  10,
+                                                                "accuracy":  0.9,
+                                                                "predictions":  {
+                                                                                    "ESCALATE":  9,
+                                                                                    "HIGH":  1
+                                                                                }
+                                                            }
+                                           },
+                             "language_counts":  {
+                                                     "en":  40
+                                                 }
+                         },
+                  "pt-BR":  {
+                                "mode":  "pt-BR",
+                                "cases":  40,
+                                "permutations_per_case":  5,
+                                "accuracy":  0.325,
+                                "under_routing_rate":  0.275,
+                                "over_routing_rate":  0.4,
+                                "option_order_flip_rate":  0.575,
+                                "mean_inference_ms":  93.685,
+                                "per_class":  {
+                                                  "LOW":  {
+                                                              "n":  10,
+                                                              "accuracy":  0.2,
+                                                              "predictions":  {
+                                                                                  "HIGH":  7,
+                                                                                  "ESCALATE":  1,
+                                                                                  "LOW":  2
+                                                                              }
+                                                          },
+                                                  "MEDIUM":  {
+                                                                 "n":  10,
+                                                                 "accuracy":  0.1,
+                                                                 "predictions":  {
+                                                                                     "HIGH":  8,
+                                                                                     "MEDIUM":  1,
+                                                                                     "LOW":  1
+                                                                                 }
+                                                             },
+                                                  "HIGH":  {
+                                                               "n":  10,
+                                                               "accuracy":  1.0,
+                                                               "predictions":  {
+                                                                                   "HIGH":  10
+                                                                               }
+                                                           },
+                                                  "ESCALATE":  {
+                                                                   "n":  10,
+                                                                   "accuracy":  0.0,
+                                                                   "predictions":  {
+                                                                                       "HIGH":  10
+                                                                                   }
+                                                               }
+                                              },
+                                "language_counts":  {
+                                                        "pt-BR":  40
+                                                    }
+                            },
+                  "mixed":  {
+                                "mode":  "mixed",
+                                "cases":  40,
+                                "permutations_per_case":  5,
+                                "accuracy":  0.475,
+                                "under_routing_rate":  0.35,
+                                "over_routing_rate":  0.175,
+                                "option_order_flip_rate":  0.625,
+                                "mean_inference_ms":  92.455,
+                                "per_class":  {
+                                                  "LOW":  {
+                                                              "n":  10,
+                                                              "accuracy":  0.7,
+                                                              "predictions":  {
+                                                                                  "LOW":  7,
+                                                                                  "HIGH":  3
+                                                                              }
+                                                          },
+                                                  "MEDIUM":  {
+                                                                 "n":  10,
+                                                                 "accuracy":  0.3,
+                                                                 "predictions":  {
+                                                                                     "ESCALATE":  1,
+                                                                                     "MEDIUM":  3,
+                                                                                     "LOW":  4,
+                                                                                     "HIGH":  2
+                                                                                 }
+                                                             },
+                                                  "HIGH":  {
+                                                               "n":  10,
+                                                               "accuracy":  0.5,
+                                                               "predictions":  {
+                                                                                   "MEDIUM":  4,
+                                                                                   "HIGH":  5,
+                                                                                   "ESCALATE":  1
+                                                                               }
+                                                           },
+                                                  "ESCALATE":  {
+                                                                   "n":  10,
+                                                                   "accuracy":  0.4,
+                                                                   "predictions":  {
+                                                                                       "ESCALATE":  4,
+                                                                                       "HIGH":  6
+                                                                                   }
+                                                               }
+                                              },
+                                "language_counts":  {
+                                                        "en":  20,
+                                                        "pt-BR":  20
+                                                    }
+                            }
+              },
+    "note":  "Laya base checkpoint; confidence temperatures emitted upstream warning and should be treated as uncalibrated."
+}
