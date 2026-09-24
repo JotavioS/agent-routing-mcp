@@ -1,0 +1,27 @@
+{
+  "name": "routing-v1",
+  "status": "frozen-holdout",
+  "generator_seed": 20260924,
+  "rows": 160,
+  "sha256": "57de88ba7bb11f14f42f045151aae7a36d2c40364e20a25f04e91034e4884e58",
+  "labels": {
+    "LOW": 40,
+    "MEDIUM": 40,
+    "HIGH": 40,
+    "ESCALATE": 40
+  },
+  "languages": {
+    "en": 80,
+    "pt-BR": 80
+  },
+  "candidate_order": "randomized per case",
+  "policy": "HOLDOUT ONLY. Do not use these examples or templates as fine-tuning data. Use only for pre/post-training evaluation.",
+  "primary_metrics": [
+    "accuracy",
+    "under_routing_rate",
+    "over_routing_rate",
+    "mean_lane_distance",
+    "severe_under_route_rate",
+    "reversed_order_argmax_flip_rate"
+  ]
+}
