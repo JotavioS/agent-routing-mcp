@@ -1,0 +1,74 @@
+{
+  "version": "routing-training-v1",
+  "format": "LocalLLaMA/typed-decisions compatible JSONL",
+  "workflow": "software_model_routing",
+  "lanes": [
+    "LOW",
+    "MEDIUM",
+    "HIGH",
+    "ESCALATE"
+  ],
+  "benchmark_excluded": "routing_benchmark_v1.json",
+  "soft_targets": true,
+  "audit": {
+    "counts": {
+      "train": {
+        "n": 12000,
+        "labels": {
+          "ESCALATE": 3000,
+          "LOW": 3000,
+          "HIGH": 3000,
+          "MEDIUM": 3000
+        },
+        "boundaries": {
+          "clear": 8517,
+          "down": 1705,
+          "up": 1778
+        },
+        "languages": {
+          "pt": 5985,
+          "en": 6015
+        }
+      },
+      "validation": {
+        "n": 1600,
+        "labels": {
+          "ESCALATE": 400,
+          "MEDIUM": 400,
+          "HIGH": 400,
+          "LOW": 400
+        },
+        "boundaries": {
+          "clear": 1126,
+          "down": 238,
+          "up": 236
+        },
+        "languages": {
+          "pt": 766,
+          "en": 834
+        }
+      },
+      "calibration": {
+        "n": 1600,
+        "labels": {
+          "HIGH": 400,
+          "ESCALATE": 400,
+          "MEDIUM": 400,
+          "LOW": 400
+        },
+        "boundaries": {
+          "clear": 1137,
+          "down": 216,
+          "up": 247
+        },
+        "languages": {
+          "en": 788,
+          "pt": 812
+        }
+      }
+    },
+    "exact_benchmark_contamination": [],
+    "near_benchmark_matches_jaccard_ge_0_90": [],
+    "unique_states": 15200
+  }
+}

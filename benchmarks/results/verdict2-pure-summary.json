@@ -1,0 +1,21 @@
+{
+  "name": "verdict2-pure-reproduced",
+  "checkpoint_sha256": "2744f2b5e97350cf01fecc094e107e91d2c1bcee662de2db6d9632f55b76f546",
+  "backbone": "answerdotai/ModernBERT-base",
+  "upstream_dev_accuracy_reproduced": 0.77,
+  "upstream_dev_brier_reproduced": 0.06288373455544818,
+  "routing_benchmark": "routing-v1.json",
+  "routing_cases": 60,
+  "permutations_per_case": 5,
+  "routing_accuracy": 0.2833333333333333,
+  "option_order_flip_rate": 0.43333333333333335,
+  "under_routing_rate": 0.4666666666666667,
+  "over_routing_rate": 0.25,
+  "per_class": {
+    "LOW": 0.0,
+    "MEDIUM": 1.0,
+    "HIGH": 0.13333333333333333,
+    "ESCALATE": 0.0
+  },
+  "note": "Reproduced Verdict 2.0 typed-decisions checkpoint before model-routing fine-tuning."
+}
