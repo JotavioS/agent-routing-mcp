@@ -16,8 +16,16 @@ class ProviderConfig:
 
 
 @dataclass(frozen=True)
+class RoutingStrategyConfig:
+    type: str
+    low_score_max: float = 1.45
+    medium_score_max: float = 2.10
+
+
+@dataclass(frozen=True)
 class AppConfig:
     provider: ProviderConfig
+    strategy: RoutingStrategyConfig
     ambiguity_margin: float
     routes: dict[Route, RouteTarget]
 
@@ -33,6 +41,17 @@ def load_config() -> AppConfig:
         timeout_seconds=float(provider_raw.get("timeout_seconds", 5)),
     )
 
+    strategy_raw = raw.get("routing_strategy", {"type": "choice"})
+    strategy = RoutingStrategyConfig(
+        type=strategy_raw.get("type", "choice"),
+        low_score_max=float(strategy_raw.get("low_score_max", 1.45)),
+        medium_score_max=float(strategy_raw.get("medium_score_max", 2.10)),
+    )
+    if strategy.type not in {"choice", "hierarchical"}:
+        raise ValueError(f"unsupported routing strategy: {strategy.type}")
+    if strategy.low_score_max >= strategy.medium_score_max:
+        raise ValueError("low_score_max must be lower than medium_score_max")
+
     routes = {
         Route(name): RouteTarget(
             model=data["model"],
@@ -47,6 +66,7 @@ def load_config() -> AppConfig:
 
     return AppConfig(
         provider=provider,
+        strategy=strategy,
         ambiguity_margin=float(raw.get("ambiguity_margin", 0.10)),
         routes=routes,
     )
