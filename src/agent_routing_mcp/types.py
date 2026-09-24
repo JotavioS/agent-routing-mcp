@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from enum import StrEnum
+from typing import Any
 
 
 class Route(StrEnum):
@@ -33,3 +34,4 @@ class RoutingResult:
     margin: float
     ambiguous: bool
     probabilities: dict[str, float]
+    details: dict[str, Any] | None = None
