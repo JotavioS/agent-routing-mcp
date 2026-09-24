@@ -3,14 +3,14 @@ from __future__ import annotations
 from dataclasses import asdict
 from functools import lru_cache
 
-from mcp.server.fastmcp import FastMCP
+from mcp.server import MCPServer
 
 from agent_routing_mcp.config import load_config
 from agent_routing_mcp.providers.systemone_http import SystemOneHTTPProvider
 from agent_routing_mcp.router import ModelRouter
 
 
-mcp = FastMCP("agent-routing-mcp")
+mcp = MCPServer("agent-routing-mcp")
 
 
 @lru_cache(maxsize=1)
