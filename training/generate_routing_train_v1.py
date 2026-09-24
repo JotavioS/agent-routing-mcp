@@ -64,6 +64,17 @@ ENTITIES = {
 
 STACKS = ["Laravel", "PHP", "Python", "TypeScript", "React", "SQL", "queue worker", "REST API"]
 
+SURFACES = {
+    "en": [
+        "admin portal", "storefront", "public API", "internal API", "queue worker",
+        "scheduled job", "repository layer", "application service", "CLI", "integration adapter",
+    ],
+    "pt": [
+        "portal administrativo", "storefront", "API pública", "API interna", "worker de fila",
+        "job agendado", "camada de repositório", "serviço de aplicação", "CLI", "adaptador de integração",
+    ],
+}
+
 LOW_PATTERNS = {
     "en": [
         "In {stack}, replace one local identifier used by the {entity} formatter; behavior must remain byte-for-byte equivalent.",
@@ -225,6 +236,7 @@ def make_record(rng: random.Random, split: str, lane: str, index: int, used: set
         language = "pt" if rng.random() < 0.40 else "en"
         entity = rng.choice(ENTITIES[language])
         stack = rng.choice(STACKS)
+        surface = rng.choice(SURFACES[language])
         pattern = rng.choice(PATTERNS[lane][language])
         task = pattern.format(entity=entity, stack=stack)
         context = rng.choice(CONTEXTS[lane])
