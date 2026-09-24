@@ -107,3 +107,24 @@ The global/project `AGENTS.md` only needs to instruct the agent to call `route_m
 - Deterministic evidence remains outside the decision model.
 - Model mappings are configuration, not code.
 - Low confidence is surfaced instead of hidden.
+
+
+### Tested Codex configuration
+
+A working Codex configuration for a local stdio installation is:
+
+```toml
+[mcp_servers.route-model]
+command = "/absolute/path/to/agent-routing-mcp/.venv/bin/agent-routing-mcp"
+default_tools_approval_mode = "approve"
+enabled_tools = ["route_model"]
+
+[mcp_servers.route-model.env]
+AGENT_ROUTING_CONFIG = "/absolute/path/to/routing.json"
+```
+
+`enabled_tools` deliberately keeps the public surface restricted to `route_model`.
+
+For non-interactive Codex runs, `default_tools_approval_mode = "approve"` allows this bounded read-only routing tool to execute without stopping for an interactive MCP approval prompt.
+
+Validated with Codex CLI 0.156.1 and MCP SDK 2.2.0.
