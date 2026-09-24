@@ -31,6 +31,9 @@ def get_router() -> ModelRouter:
         provider=provider,
         routes=config.routes,
         ambiguity_margin=config.ambiguity_margin,
+        strategy=config.strategy.type,
+        low_score_max=config.strategy.low_score_max,
+        medium_score_max=config.strategy.medium_score_max,
     )
 
 
