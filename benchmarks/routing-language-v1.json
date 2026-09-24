@@ -1,0 +1,252 @@
+{
+  "version": "routing-language-benchmark-v1",
+  "purpose": "Paired language holdout. Each pair has semantically equivalent EN and PT-BR tasks. Evaluation only; never use for training.",
+  "labels": [
+    "LOW",
+    "MEDIUM",
+    "HIGH",
+    "ESCALATE"
+  ],
+  "pairs": [
+    {
+      "id": "low-01",
+      "label": "LOW",
+      "task_en": "Rename a local variable in one PHP method without changing behavior.",
+      "task_ptbr": "Renomeie uma variável local em um único método PHP sem alterar o comportamento."
+    },
+    {
+      "id": "low-02",
+      "label": "LOW",
+      "task_en": "Fix a typo in one README paragraph.",
+      "task_ptbr": "Corrija um erro de digitação em um parágrafo do README."
+    },
+    {
+      "id": "low-03",
+      "label": "LOW",
+      "task_en": "Change the text of one existing button without changing its click handler.",
+      "task_ptbr": "Altere o texto de um botão existente sem modificar seu manipulador de clique."
+    },
+    {
+      "id": "low-04",
+      "label": "LOW",
+      "task_en": "Update one timeout constant in a YAML configuration file.",
+      "task_ptbr": "Atualize uma única constante de timeout em um arquivo de configuração YAML."
+    },
+    {
+      "id": "low-05",
+      "label": "LOW",
+      "task_en": "Remove one unused import from a TypeScript module after confirming it has no side effects.",
+      "task_ptbr": "Remova um import não utilizado de um módulo TypeScript após confirmar que ele não possui efeitos colaterais."
+    },
+    {
+      "id": "low-06",
+      "label": "LOW",
+      "task_en": "Add a missing return type annotation to one isolated Python helper without changing runtime behavior.",
+      "task_ptbr": "Adicione uma anotação de tipo de retorno ausente a um helper Python isolado sem alterar o comportamento em execução."
+    },
+    {
+      "id": "low-07",
+      "label": "LOW",
+      "task_en": "Add one null guard to an isolated helper that already has a focused test.",
+      "task_ptbr": "Adicione uma única checagem de nulo a um helper isolado que já possui um teste focado."
+    },
+    {
+      "id": "low-08",
+      "label": "LOW",
+      "task_en": "Replace one deprecated helper call with its direct equivalent in a single file.",
+      "task_ptbr": "Substitua uma chamada obsoleta de helper pelo equivalente direto em um único arquivo."
+    },
+    {
+      "id": "low-09",
+      "label": "LOW",
+      "task_en": "Correct one validation error message; do not change validation rules.",
+      "task_ptbr": "Corrija uma mensagem de erro de validação; não altere as regras de validação."
+    },
+    {
+      "id": "low-10",
+      "label": "LOW",
+      "task_en": "Change the default page size constant from 20 to 25 in one configuration location.",
+      "task_ptbr": "Altere a constante de tamanho padrão de página de 20 para 25 em um único local de configuração."
+    },
+    {
+      "id": "med-01",
+      "label": "MEDIUM",
+      "task_en": "Implement a new authenticated Laravel API endpoint with request validation, persistence, serialization, and focused tests.",
+      "task_ptbr": "Implemente um novo endpoint autenticado da API Laravel com validação da requisição, persistência, serialização e testes focados."
+    },
+    {
+      "id": "med-02",
+      "label": "MEDIUM",
+      "task_en": "Add pagination to an existing REST endpoint including parameter validation and integration tests.",
+      "task_ptbr": "Adicione paginação a um endpoint REST existente, incluindo validação de parâmetros e testes de integração."
+    },
+    {
+      "id": "med-03",
+      "label": "MEDIUM",
+      "task_en": "Add one nullable database column, expose it through the API resource, update validation, and add focused tests.",
+      "task_ptbr": "Adicione uma coluna anulável ao banco de dados, exponha-a pelo resource da API, atualize a validação e adicione testes focados."
+    },
+    {
+      "id": "med-04",
+      "label": "MEDIUM",
+      "task_en": "Add a CLI flag to an existing command, wire it through the service it calls, and add focused tests.",
+      "task_ptbr": "Adicione uma flag de CLI a um comando existente, propague-a pelo serviço chamado e adicione testes focados."
+    },
+    {
+      "id": "med-05",
+      "label": "MEDIUM",
+      "task_en": "Add caching around one existing repository operation and update service and tests.",
+      "task_ptbr": "Adicione cache a uma operação existente de repositório e atualize o serviço e os testes."
+    },
+    {
+      "id": "med-06",
+      "label": "MEDIUM",
+      "task_en": "Add a background job using the application's established queue pattern and test it.",
+      "task_ptbr": "Adicione um job em segundo plano usando o padrão de filas já estabelecido na aplicação e teste-o."
+    },
+    {
+      "id": "med-07",
+      "label": "MEDIUM",
+      "task_en": "Expose an existing filter in the React UI and API following established request and query patterns.",
+      "task_ptbr": "Exponha um filtro existente na interface React e na API seguindo os padrões já estabelecidos de requisição e consulta."
+    },
+    {
+      "id": "med-08",
+      "label": "MEDIUM",
+      "task_en": "Add CSV export to an existing listing using current authorization and query patterns plus focused tests.",
+      "task_ptbr": "Adicione exportação CSV a uma listagem existente usando os padrões atuais de autorização e consulta, além de testes focados."
+    },
+    {
+      "id": "med-09",
+      "label": "MEDIUM",
+      "task_en": "Add an optional sort parameter and propagate it through request validation, query builder, and tests.",
+      "task_ptbr": "Adicione um parâmetro opcional de ordenação e propague-o pela validação da requisição, query builder e testes."
+    },
+    {
+      "id": "med-10",
+      "label": "MEDIUM",
+      "task_en": "Integrate one additional field from an already-supported provider into an existing sync flow and tests.",
+      "task_ptbr": "Integre um campo adicional de um provedor já suportado a um fluxo de sincronização existente e aos testes."
+    },
+    {
+      "id": "high-01",
+      "label": "HIGH",
+      "task_en": "Debug an intermittent transaction bug involving controller, service, repository, queue job, and integration tests where the root cause is unknown.",
+      "task_ptbr": "Depure um bug intermitente de transação envolvendo controller, service, repository, job de fila e testes de integração, cuja causa raiz é desconhecida."
+    },
+    {
+      "id": "high-02",
+      "label": "HIGH",
+      "task_en": "Refactor authorization middleware shared by several modules while preserving behavior and regression coverage.",
+      "task_ptbr": "Refatore um middleware de autorização compartilhado por vários módulos, preservando o comportamento e a cobertura de regressão."
+    },
+    {
+      "id": "high-03",
+      "label": "HIGH",
+      "task_en": "Diagnose and fix a performance regression spanning database queries, caching, async jobs, and instrumentation.",
+      "task_ptbr": "Diagnostique e corrija uma regressão de desempenho envolvendo consultas ao banco, cache, jobs assíncronos e instrumentação."
+    },
+    {
+      "id": "high-04",
+      "label": "HIGH",
+      "task_en": "Replace a core library used across multiple modules, adapt incompatible interfaces, and resolve resulting test failures.",
+      "task_ptbr": "Substitua uma biblioteca central usada por vários módulos, adapte interfaces incompatíveis e resolva as falhas de teste resultantes."
+    },
+    {
+      "id": "high-05",
+      "label": "HIGH",
+      "task_en": "Fix an intermittent concurrency race affecting writes across worker processes.",
+      "task_ptbr": "Corrija uma condição de corrida intermitente que afeta gravações entre processos worker."
+    },
+    {
+      "id": "high-06",
+      "label": "HIGH",
+      "task_en": "Implement tenant-aware behavior across API and portal modules, touching several boundaries without redesigning the tenancy architecture.",
+      "task_ptbr": "Implemente comportamento consciente de tenant entre módulos da API e do portal, atravessando vários limites sem redesenhar a arquitetura de tenancy."
+    },
+    {
+      "id": "high-07",
+      "label": "HIGH",
+      "task_en": "Diagnose inconsistent application state caused by transactions, events, retries, and cache invalidation.",
+      "task_ptbr": "Diagnostique estado inconsistente da aplicação causado por transações, eventos, novas tentativas e invalidação de cache."
+    },
+    {
+      "id": "high-08",
+      "label": "HIGH",
+      "task_en": "Rework a shared state machine used by several modules while preserving backward-compatible transitions and removing hidden coupling.",
+      "task_ptbr": "Refatore uma máquina de estados compartilhada por vários módulos, preservando transições retrocompatíveis e removendo acoplamentos ocultos."
+    },
+    {
+      "id": "high-09",
+      "label": "HIGH",
+      "task_en": "Trace a data-integrity defect where updates occasionally disappear across retries, events, and transaction boundaries.",
+      "task_ptbr": "Rastreie um defeito de integridade de dados em que atualizações desaparecem ocasionalmente entre novas tentativas, eventos e limites transacionais."
+    },
+    {
+      "id": "high-10",
+      "label": "HIGH",
+      "task_en": "Find the source of an N+1 regression that appears only under production-like load and spans ORM, cache, and serialization.",
+      "task_ptbr": "Encontre a origem de uma regressão N+1 que aparece apenas sob carga semelhante à produção e envolve ORM, cache e serialização."
+    },
+    {
+      "id": "esc-01",
+      "label": "ESCALATE",
+      "task_en": "Redesign the multitenant authorization architecture across API, portal, and storefront while preserving tenant isolation and defining a migration strategy.",
+      "task_ptbr": "Redesenhe a arquitetura de autorização multi-tenant entre API, portal e loja, preservando o isolamento entre tenants e definindo uma estratégia de migração."
+    },
+    {
+      "id": "esc-02",
+      "label": "ESCALATE",
+      "task_en": "Design security-critical storage, encryption, rotation, and access-control architecture for tenant database credentials.",
+      "task_ptbr": "Projete uma arquitetura crítica de segurança para armazenamento, criptografia, rotação e controle de acesso das credenciais de banco dos tenants."
+    },
+    {
+      "id": "esc-03",
+      "label": "ESCALATE",
+      "task_en": "Plan a no-downtime migration from a legacy multitenant database topology to a new canonical topology across several applications.",
+      "task_ptbr": "Planeje uma migração sem downtime de uma topologia legada de bancos multi-tenant para uma nova topologia canônica entre várias aplicações."
+    },
+    {
+      "id": "esc-04",
+      "label": "ESCALATE",
+      "task_en": "A complex implementation has failed three times with different approaches; integration tests still fail and the architectural root cause remains unresolved.",
+      "task_ptbr": "Uma implementação complexa falhou três vezes com abordagens diferentes; os testes de integração ainda falham e a causa raiz arquitetural permanece sem solução."
+    },
+    {
+      "id": "esc-05",
+      "label": "ESCALATE",
+      "task_en": "Design cross-service payment idempotency, authorization boundaries, failure recovery, and migration strategy for production.",
+      "task_ptbr": "Projete idempotência de pagamentos entre serviços, limites de autorização, recuperação de falhas e estratégia de migração para produção."
+    },
+    {
+      "id": "esc-06",
+      "label": "ESCALATE",
+      "task_en": "Redesign ownership and trust boundaries across several services with backward-compatible cutover and rollback.",
+      "task_ptbr": "Redesenhe os limites de ownership e confiança entre vários serviços com cutover retrocompatível e rollback."
+    },
+    {
+      "id": "esc-07",
+      "label": "ESCALATE",
+      "task_en": "Define a new cross-application identity and authorization model including staged migration, rollback, and tenant-isolation guarantees.",
+      "task_ptbr": "Defina um novo modelo de identidade e autorização entre aplicações, incluindo migração em etapas, rollback e garantias de isolamento entre tenants."
+    },
+    {
+      "id": "esc-08",
+      "label": "ESCALATE",
+      "task_en": "Replace the production consistency architecture across services while guaranteeing no downtime and reversible rollout.",
+      "task_ptbr": "Substitua a arquitetura de consistência em produção entre serviços, garantindo ausência de downtime e rollout reversível."
+    },
+    {
+      "id": "esc-09",
+      "label": "ESCALATE",
+      "task_en": "After multiple failed fixes, redesign a systemic workflow spanning API, workers, databases, and an external provider.",
+      "task_ptbr": "Após várias correções fracassadas, redesenhe um fluxo sistêmico que atravessa API, workers, bancos de dados e um provedor externo."
+    },
+    {
+      "id": "esc-10",
+      "label": "ESCALATE",
+      "task_en": "Create the security architecture for rotating and delegating privileged credentials across tenants and services.",
+      "task_ptbr": "Crie a arquitetura de segurança para rotação e delegação de credenciais privilegiadas entre tenants e serviços."
+    }
+  ]
+}
